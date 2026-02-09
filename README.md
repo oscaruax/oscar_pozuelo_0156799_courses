@@ -1,13 +1,13 @@
 # Sistema de Gestión de Cursos
 
-Proyecto desarrollado como ejercicio final de la asignatura **Planificación y Gestión de Sistemas de Información**  
+Proyecto desarrollado como ejercicio final de la asignatura **Programación Concurrente**  
 Grado en Ingeniería Informática – Universidad Alfonso X el Sabio (UAX)
 
 ---
 
 ## 📦 Arquitectura del proyecto
 
-El sistema está compuesto por **tres microservicios independientes**, desarrollados con **Spring Boot 3.5.10** y **Java 21**, que comparten una **base de datos H2 en modo fichero**.
+El sistema está compuesto por **tres microservicios independientes**, desarrollados con **Spring Boot 3.5.10** y **Java 17**, que comparten una **base de datos H2 en modo fichero**.
 
 ### Microservicios
 
@@ -30,7 +30,7 @@ El sistema está compuesto por **tres microservicios independientes**, desarroll
 
 ## 🛠️ Tecnologías utilizadas
 
-- Java 21
+- Java 17
 - Spring Boot 3.5.10
 - Spring Data JPA
 - Spring Batch 5.x
@@ -57,9 +57,10 @@ Todos los servicios usan **la misma versión de H2 y Spring Boot** para evitar i
 
 ## 🚀 Orden correcto de ejecución
 
-1. **batch-import**
-2. **course-service**
-3. **enrollment-service**
+1.**course-service**
+2. **batch-import**
+3. **course-service**
+4. **enrollment-service**
 
 ---
 
@@ -122,21 +123,22 @@ Bases de Datos,Carlos,2025-06-01,35
 ---
 
 ## ✅ Pruebas para demostrar funcionamiento completo
+Importación OK
+<img width="983" height="568" alt="ImporteOK" src="https://github.com/user-attachments/assets/aa0bf485-196d-4c59-bed9-dad976a73fd6" />
 
-### 1. Batch Import
-- Arrancar batch-import
-- Ver inserts en logs
-- Ver cursos en H2
+GET courses OK
+<img width="1806" height="1234" alt="GETcursos" src="https://github.com/user-attachments/assets/27a5e8cb-af83-40ee-ab94-0e4cf793cb6e" />
 
-### 2. Course Service
-- Consultar cursos vía REST
-- Ver plazas correctas
-- Acceder a `/informe`
+POST Enrollment OK
+<img width="1803" height="828" alt="POSTenrollmentOK" src="https://github.com/user-attachments/assets/a9896fcf-cefc-4a6d-ae8b-8bdb7fef4697" />
 
-### 3. Enrollment Service
-- Crear matrículas
-- Ver reducción de plazas
-- Validar que no se excede capacidad
+GET courses con alumnos OK
+<img width="2128" height="1003" alt="GETlistarcursosOK" src="https://github.com/user-attachments/assets/b19225fd-6bef-48b1-8674-2ed8e482508e" />
+
+DELETE course OK
+<img width="1812" height="697" alt="DELETEcurso OK" src="https://github.com/user-attachments/assets/8456c209-7f16-4e5a-89bb-966f23606563" />
+
+
 
 ---
 
@@ -151,14 +153,6 @@ Bases de Datos,Carlos,2025-06-01,35
 - Password: *(vacía)*
 
 ---
-
-## 📌 Observaciones finales
-
-- El proyecto cumple todos los **requisitos mínimos del enunciado**
-- Arquitectura desacoplada
-- Persistencia compartida correctamente configurada
-- Control de errores y validaciones implementadas
-- Importación batch funcional y verificable
 
 ---
 
