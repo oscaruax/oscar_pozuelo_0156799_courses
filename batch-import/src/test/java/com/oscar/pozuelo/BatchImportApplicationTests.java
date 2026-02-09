@@ -1,0 +1,13 @@
+package com.oscar.pozuelo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class BatchImportApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
