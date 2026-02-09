@@ -1,0 +1,245 @@
+{
+  "info": {
+    "_postman_id": "14b4d502-5519-422a-a61a-6326879d1220",
+    "name": "COURSES",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "11207809"
+  },
+  "item": [
+    {
+      "name": "Crear Curso",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Spring Boot Básico\",\r\n  \"teacher\": \"Ana\",\r\n  \"startDate\": \"2025-02-01\",\r\n  \"capacity\": 20\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/courses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "courses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Cursos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/courses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "courses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Modificar Curso",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/vnd.api+json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Spring Boot Intermedio\",\r\n  \"teacher\": \"Ana\",\r\n  \"startDate\": \"2025-02-01\",\r\n  \"capacity\": 15\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/courses/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "courses",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Borrar Curso",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8081/courses/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "courses",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Enrollment Alumno",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"courseId\": 1,\r\n  \"studentName\": \"Eustaquia\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/enrollments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "enrollments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Enrollments",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/enrollments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "enrollments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Enrollments por Curso",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/enrollments/course/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "enrollments",
+            "course",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Curso Completo",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/courses/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "courses",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
